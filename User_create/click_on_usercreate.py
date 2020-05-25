@@ -3,15 +3,15 @@ import unittest
 
 from selenium import webdriver
 
-from Data.Paramters import Data
-
+from Data.parameters import Data
 from TS.reuse_func import cqube
+from get_dir import pwd
 
 
 class Click_create(unittest.TestCase):
     def setUp(self):
-        dri = Data()
-        self.driver = webdriver.Chrome(dri.get_driver_path())
+        path_exe = pwd()
+        self.driver = webdriver.Chrome(path_exe.get_driver_path())
         driver = cqube(self.driver)
         driver.open_cqube_appln()
         driver.login_cqube()
@@ -19,11 +19,11 @@ class Click_create(unittest.TestCase):
     def test_userlink(self):
         self.driver.find_element_by_xpath(Data.Dashboard).click()
         time.sleep(3)
-        self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav/div/mat-nav-list/mat-list/mat-list-item/div/button/span/mat-icon").click()
+        self.driver.find_element_by_xpath(Data.user).click()
         time.sleep(3)
-        self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav/div/mat-nav-list/mat-list/div/a[1]/div/span").click()
+        self.driver.find_element_by_xpath(Data.create_user).click()
         time.sleep(2)
-        header = self.driver.find_element_by_xpath("//h2").text
+        header = self.driver.find_element_by_xpath(Data.create_headtext).text
         self.assertEqual(header,"Create User","Create user not found!..")
 
     def tearDown(self):

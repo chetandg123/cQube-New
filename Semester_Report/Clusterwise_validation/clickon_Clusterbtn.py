@@ -4,26 +4,22 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 
-from Data.Paramters import Data
-from Testscripts.login_page import Home_page
+from Data.parameters import Data
+from TS.reuse_func import cqube
+from get_dir import pwd
 
 
-class blockbtn_click(unittest.TestCase):
+class clusterbtn_click(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome(Data.Path)
-        self.driver.maximize_window()
-        self.driver.implicitly_wait(10)
-        self.driver.get(Data.URL)
+        dri = pwd()
+        self.driver = webdriver.Chrome(dri.get_driver_path())
+        driver = cqube(self.driver)
+        driver.open_cqube_appln()
+        driver.login_cqube()
+        driver.navigate_to_semester_report()
 
     def test_clusterbtn(self):
-        print(self.driver.title)
-        self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
-        self.driver.find_element_by_xpath(Data.pwd).send_keys(Data.password)
-        self.driver.find_element_by_xpath(Data.loginbtn).click()
-        time.sleep(5)
-        self.driver.find_element_by_xpath(Data.Dashboard).click()
-        time.sleep(3)
-        self.driver.find_element_by_xpath(Data.SR).click()
+
         time.sleep(5)
         self.driver.find_element_by_xpath(Data.Clusters).click()
         time.sleep(30)

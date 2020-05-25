@@ -4,15 +4,14 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 
-from Data.Paramters import Data
-from Testscripts.login_page import Home_page
-
+from Data.parameters import Data
 from TS.reuse_func import cqube
+from get_dir import pwd
 
 
-class Banskanth_test(unittest.TestCase):
+class test_dot_records(unittest.TestCase):
     def setUp(self):
-        dri = Data()
+        dri = pwd()
         self.driver = webdriver.Chrome(dri.get_driver_path())
         driver = cqube(self.driver)
         driver.open_cqube_appln()

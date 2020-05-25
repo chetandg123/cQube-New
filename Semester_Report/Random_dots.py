@@ -4,12 +4,14 @@ import unittest
 
 from selenium import webdriver
 
-from Data.Paramters import Data
+from Data.parameters import Data
+from TS.reuse_func import cqube
+from get_dir import pwd
 
 
-class Vallabnagar_dist(unittest.TestCase):
+class countdots_dist(unittest.TestCase):
     def setUp(self):
-        dri = Data()
+        dri = pwd()
         self.driver = webdriver.Chrome(dri.get_driver_path())
         driver = cqube(self.driver)
         driver.open_cqube_appln()
@@ -21,7 +23,6 @@ class Vallabnagar_dist(unittest.TestCase):
         self.driver.find_element_by_xpath(Data.SRD12).click()
         self.driver.find_element_by_xpath(Data.SRB4).click()
         time.sleep(5)
-        self.driver.find_element_by_xpath(Data.Download).click()
         lists = self.driver.find_elements_by_class_name(Data.dots)
         count = len(lists)
         self.assertNotEqual(5,count,msg="Failed")

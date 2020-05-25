@@ -5,30 +5,32 @@ from selenium import webdriver
 
 from Data.parameters import Data
 from TS.reuse_func import cqube
+from get_dir import pwd
 
 
 class Click_ChangePwd(unittest.TestCase):
     def setUp(self):
-        dri = Data()
-        self.driver = webdriver.Chrome(dri.get_driver_path())
+        path_exe = pwd()
+        self.driver = webdriver.Chrome(path_exe.get_driver_path())
         driver = cqube(self.driver)
         driver.open_cqube_appln()
         driver.login_cqube()
     def test_set_negative_newpwd(self):
         self.driver.find_element_by_xpath(Data.Dashboard).click()
         time.sleep(3)
-        self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav/div/mat-nav-list/mat-list/mat-list-item/div/button/span/mat-icon").click()
+        self.driver.find_element_by_xpath(Data.user).click()
         time.sleep(3)
-        self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav/div/mat-nav-list/mat-list/div/a[2]/div/span").click()
-        pwd =self.driver.find_element_by_xpath("//h2").text
+        self.driver.find_element_by_xpath(Data.changepwd).click()
+        pwd =self.driver.find_element_by_xpath(Data.create_headtext).text
         self.assertEqual(pwd,"Change Password","Change password is not found!..")
-        self.driver.find_element_by_xpath("//input[@name='newPasswd']").send_keys("tibil123")
+        self.driver.find_element_by_xpath(Data.new_pwd).send_keys("tibil123")
         time.sleep(2)
-        self.driver.find_element_by_xpath("//input[@name='cnfpass']").send_keys("tibil12")
+        self.driver.find_element_by_xpath(Data.conf_pwd).send_keys("tibil12")
         time.sleep(2)
-        self.driver.find_element_by_xpath("//button[@type='submit']").click()
+        self.driver.find_element_by_xpath(Data.submit).click()
         time.sleep(3)
-        errormsg = self.driver.find_element_by_xpath("//p").text
+        print(self.driver.get_screenshot_as_file("/home/chetan/cQube-New/Screenshots/errormsg.png"))
+        errormsg = self.driver.find_element_by_xpath(Data.errormsg).text
         print(errormsg)
         self.assertEqual(errormsg,"Password not matched" ,"Matching password!")
     def tearDown(self):

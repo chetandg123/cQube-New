@@ -3,6 +3,7 @@ import re
 import time
 from selenium import webdriver
 from selenium.webdriver import ActionChains
+from selenium.webdriver.support.select import Select
 
 from Data.parameters import Data
 
@@ -27,18 +28,18 @@ class cqube():
         self.driver.find_element_by_xpath(Data.SAR).click()
         self.driver.find_element_by_xpath(Data.year).click()
         self.driver.find_element_by_xpath(Data.august).click()
+
     def navigate_to_student_report_S(self):
         self.driver.find_element_by_xpath(Data.Dashboard).click()
         self.driver.find_element_by_xpath(Data.SAR).click()
         self.driver.find_element_by_xpath(Data.year).click()
         self.driver.find_element_by_xpath(Data.Sept).click()
+
     def navigate_to_student_report_O(self):
         self.driver.find_element_by_xpath(Data.Dashboard).click()
         self.driver.find_element_by_xpath(Data.SAR).click()
         self.driver.find_element_by_xpath(Data.year).click()
         self.driver.find_element_by_xpath(Data.Oct).click()
-
-
 
 
     def navigate_to_semester_report(self):
@@ -49,15 +50,24 @@ class cqube():
         self.driver.find_element_by_xpath(Data.Dashboard).click()
         self.driver.find_element_by_xpath(Data.crc).click()
 
+    def select_month_year(self,y,m):
+        year = Select(self.driver.find_element_by_name(Data.select_year))
+        month = Select(self.driver.find_element_by_name(Data.select_month))
+        time.sleep(2)
+        year.select_by_visible_text(y)
+        time.sleep(2)
+        month.select_by_visible_text(m)
+        time.sleep(2)
+
     def Details_text(self):
         Details = self.driver.find_elements_by_xpath(Data.details)
         time.sleep(5)
         for i in range(len(Details)):
            print(Details[i].text)
 
-    def ClickOn_HomeButton(self):
+    def Click_HomeButton(self):
             self.driver.find_element_by_id(Data.Home_icon).click()
-            print(self.driver.current_url)
+            time.sleep(3)
 
     def CRC_footers(self):
         footer = self.driver.find_elements_by_xpath(Data.footer)
@@ -117,8 +127,21 @@ class cqube():
         executable_path = os.path.join(os.getcwd(), 'Driver/chromedriver1')
         return executable_path
 
+    def crc_validation(self):
+        self.driver.find_element_by_xpath("//*[@id='select']/select/option[2]").click()
+        print(self.driver.find_element_by_xpath("//*[@id='select']/select/option[2]").text)
+        time.sleep(5)
 
-    #SAR
+        self.driver.find_element_by_xpath("//*[@id='select']/select/option[3]").click()
+        time.sleep(5)
+
+        self.driver.find_element_by_xpath("//*[@id='select']/select/option[4]").click()
+        time.sleep(5)
+
+        self.driver.find_element_by_xpath("//*[@id='select']/select/option[5]").click()
+        time.sleep(5)
+
+    #SAR_2
     def blocks_names(self):
         self.driver.find_element_by_xpath(Data.Blocks).click()
         time.sleep(15)
@@ -142,5 +165,23 @@ class cqube():
         infos = self.driver.find_elements_by_xpath(Data.details)
         for i in range(len(infos)):
             print(infos[i].text)
+    def Total_details(self):
+        details = self.driver.find_elements_by_xpath(Data.SAR_Details)
+        for i in range(len(details)):
+            print(details[i].text)
+            time.sleep(3)
 
+    def test_mouse_over(self):
+            lists = self.driver.find_elements_by_class_name(Data.dots)
+
+            def mouseover(i):
+                action = ActionChains(self.driver)
+                action.move_to_element(lists[i]).perform()
+                time.sleep(3)
+                del action
+
+            i = 0
+            while i < len(lists):
+                mouseover(i)
+                i = i + 1
 

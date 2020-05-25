@@ -4,45 +4,40 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 
-from Data.Paramters import Data
-from Testscripts.login_page import Home_page
+from Data.parameters import Data
+from TS.reuse_func import cqube
+from get_dir import pwd
 
 
-class Ahmedabad_amc(unittest.TestCase):
+class test_on_clusterrecords(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome(Data.Path)
-        self.driver.maximize_window()
-        self.driver.implicitly_wait(10)
-        self.driver.get(Data.URL)
+        dri = pwd()
+        self.driver = webdriver.Chrome(dri.get_driver_path())
+        driver = cqube(self.driver)
+        driver.open_cqube_appln()
+        driver.login_cqube()
+        driver.navigate_to_semester_report()
 
     def test_clusterbtn(self):
-        print(self.driver.title)
-        self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
-        self.driver.find_element_by_xpath(Data.pwd).send_keys(Data.password)
-        self.driver.find_element_by_xpath(Data.loginbtn).click()
         time.sleep(5)
-        self.driver.find_element_by_xpath(Data.Dashboard).click()
-        time.sleep(3)
-        self.driver.find_element_by_xpath(Data.SR).click()
-        time.sleep(5)
-        self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[2]/select[1]/option[2]").click()
+        self.driver.find_element_by_xpath(Data.SRD1).click()
         time.sleep(2)
-        self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[2]/select[2]/option[2]").click()
+        self.driver.find_element_by_xpath(Data.SRB1).click()
         time.sleep(8)
         amccount = self.driver.find_elements_by_class_name(Data.dots)
         cnt = len(amccount)-1
-        print("no of amc dots :",cnt)
+        self.assertNotEqual(0,cnt,msg="Failed")
         time.sleep(5)
-        amc = self.driver.find_elements_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[2]/select[3]/option")
+        cluster = self.driver.find_elements_by_xpath(Data.cnames)
         time.sleep(3)
-        for i in range(len(amc)):
-            amc[i].click()
+        for i in range(len(cluster)):
+            cluster[i].click()
             time.sleep(3)
             dots = self.driver.find_elements_by_class_name(Data.dots)
             count = len(dots)-1
-            print(amc[i].text," : ",count)
+            print(cluster[i].text," : ",count)
             time.sleep(3)
-        count = len(amc)-1
+        count = len(cluster)-1
         time.sleep(2)
         self.assertEqual(cnt, count, " not matching counts ")
     def tearDown(self):

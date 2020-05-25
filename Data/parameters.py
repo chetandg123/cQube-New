@@ -44,7 +44,7 @@ class Data():
     Schools = "//button[@class='btn btn-secondary']/b[contains(text(),'Schools')]"
 
     dots = "leaflet-interactive"
-
+    SAR_Details ="//div[@class='row']/div[@class='col-sm-4']/span"
     hyper_link = "//p/span"
     directory = "//p[contains(text(),' Semester report for:')]/span"
     Download = "//img[@title='Download Report']"
@@ -69,8 +69,31 @@ class Data():
     SR_Clusters_btn = "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[1]/button[2]"
     SR_Schools_btn = "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[1]/button[3] "
     Download_icon = "//img[@alt='Download Report']"
+    #user_creation
+    user ="/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav/div/mat-nav-list/mat-list/mat-list-item/div/button/span/mat-icon"
+    create_user ="/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav/div/mat-nav-list/mat-list/div/a[1]/div/span"
+    create_headtext ="//h2"
+    fname ="//input[@name='firstname']"
+    mname ="//input[@name='middlename']"
+    lname = "//input[@name='lastname']"
+    male ="//input[@name='gender'][1]"
+    female ="//input[@name='gender'][2]"
+    mail ="//input[@name='email']"
+    designation ="//input[@name='Designation']"
+    confpass ="//input[@name='cnfpass']"
+    rolesoptions ="//select/option"
+    admin ="//select/option[2]"
+    drc = "//select/option[3]"
+    drv = "//select/option[4]"
+    Adoc = "//select/option[5]"
+    Demission ="//select/option[6]"
+    changepwd = "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav/div/mat-nav-list/mat-list/div/a[2]/div/span"
+    new_pwd ="//input[@name='newPasswd']"
+    conf_pwd ="//input[@name='cnfpass']"
+    submit = "//button[@type='submit']"
+    errormsg ="//p"
 
-    # for SAR
+    # for SAR_2
     SAR_Blocks_btn = "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[2]/div[1]/button[1]"
     SAR_Clusters_btn = "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[2]/div[1]/button[2]"
     SAR_Schools_btn = "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[2]/div[1]/button[3] "
@@ -85,6 +108,8 @@ class Data():
     Dnames = "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[2]/select[1]/option"
     Bnames = "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[2]/select[2]/option"
     cnames = "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[2]/select[3]/option"
+
+    crcdist ="/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[2]/div[2]/select[1]/option"
 
     year = "//select[@id='year']/option[1]"
     monthnames = "//select[@id='month']/option"

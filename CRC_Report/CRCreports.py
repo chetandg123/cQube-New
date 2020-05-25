@@ -5,12 +5,13 @@ from selenium import webdriver
 
 from Data.parameters import Data
 from TS.reuse_func import cqube
+from get_dir import pwd
 
 
 class Crc_Reports(unittest.TestCase):
     def setUp(self):
-        dri = Data()
-        self.driver = webdriver.Chrome(dri.get_driver_path())
+        path_exe = pwd()
+        self.driver = webdriver.Chrome(path_exe.get_driver_path())
         driver = cqube(self.driver)
         driver.open_cqube_appln()
         driver.login_cqube()
@@ -20,10 +21,7 @@ class Crc_Reports(unittest.TestCase):
         driver = cqube(self.driver)
         driver.X_Yaxis()
         time.sleep(10)
-        print(self.driver.find_element_by_xpath(Data.crcvisits).text)
-        print(self.driver.find_element_by_xpath(Data.totalschools).text)
-        print(self.driver.find_element_by_xpath(Data.visited).text)
-        print(self.driver.find_element_by_xpath(Data.notvisited).text)
+
     def tearDown(self):
             time.sleep(5)
             self.driver.close()

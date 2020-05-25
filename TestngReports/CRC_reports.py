@@ -1,11 +1,13 @@
 from HTMLTestRunner import HTMLTestRunner
+
+
 import unittest
 
-from CRC_Report import Select_District_validate, CRC_District, Anand_Umreth, Bharuch_district, Bhavanagar_test, CRC_download, \
-    Cluster_wise_file, CRCreports, dist_blk_clu, Dist_block, District_click_all, District_wise_file, \
-    Districtwise_validation, crc_cluster, Kheda_Sandhana_cluster, CRC_Blockwise, Clusterwise_test, cluster_table_record, \
-    Navsari_clusters, Footer_data, Rajkot_Jasapur, Select_Type, Selecttype_files, TableData_District, \
-    Vansada_cluster, Vasad_blocktest, X_axis, Y_axis, X_Yaxis, CRC_District_Details, Mahesena_Gothva
+from CRC_Report import cluster_table_record, Cluster_wise_file, Clusterwise_test, CRC_Blockwise, crc_cluster, \
+    CRC_distlist, CRC_District, CRC_District_Details, CRC_download, CRCreports, dist_blk_clu, Dist_block, \
+    District_click_all, District_wise_file, Districtwise_file, Districtwise_validation, Footer_data, map_cluster, \
+    Map_validation1, map_validation2, Select_District_validate, Select_Type, Selecttype_files, TableData_District, \
+    Graph_xaxis_dropdown, Graph_XY, Graph_Yaxis
 
 
 class MyTestSuite(unittest.TestCase):
@@ -14,40 +16,37 @@ class MyTestSuite(unittest.TestCase):
         Integration_test = unittest.TestSuite()
         Integration_test.addTests([
              # file name .class name
-            unittest.defaultTestLoader.loadTestsFromTestCase(Select_District_validate.Ahmedabad_report),
-            unittest.defaultTestLoader.loadTestsFromTestCase(CRC_District.Sundalpur_cluster),
-            unittest.defaultTestLoader.loadTestsFromTestCase(Anand_Umreth.Umreth_test),
-            unittest.defaultTestLoader.loadTestsFromTestCase(Bharuch_district.Bharuch_cluster),
-            unittest.defaultTestLoader.loadTestsFromTestCase(Bhavanagar_test.Bhavnagar_cluster),
-            unittest.defaultTestLoader.loadTestsFromTestCase(CRC_download.Crc_Reports),
+            unittest.defaultTestLoader.loadTestsFromTestCase(cluster_table_record.test_cluster),
             unittest.defaultTestLoader.loadTestsFromTestCase(Cluster_wise_file.Crc_Reports),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Clusterwise_test.table_recordtest),
+            unittest.defaultTestLoader.loadTestsFromTestCase(CRC_Blockwise.crc_cluster_test),
+            unittest.defaultTestLoader.loadTestsFromTestCase(crc_cluster.cluster_test),
+            unittest.defaultTestLoader.loadTestsFromTestCase(CRC_distlist.District_list),
+            unittest.defaultTestLoader.loadTestsFromTestCase(CRC_District.CRCtest_cluster),
+            unittest.defaultTestLoader.loadTestsFromTestCase(CRC_District_Details.crc_report),
+            unittest.defaultTestLoader.loadTestsFromTestCase(CRC_download.Crc_Reports),
             unittest.defaultTestLoader.loadTestsFromTestCase(CRCreports.Crc_Reports),
-            unittest.defaultTestLoader.loadTestsFromTestCase(dist_blk_clu.Ahmedabad_report),
+            unittest.defaultTestLoader.loadTestsFromTestCase(dist_blk_clu.District_recordtest),
             unittest.defaultTestLoader.loadTestsFromTestCase(Dist_block.Crc_Reports),
             unittest.defaultTestLoader.loadTestsFromTestCase(District_click_all.Crc_Reports),
             unittest.defaultTestLoader.loadTestsFromTestCase(District_wise_file.Crc_Reports),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Districtwise_file.Crc_Reports),
             unittest.defaultTestLoader.loadTestsFromTestCase(Districtwise_validation.dwise_type),
-            unittest.defaultTestLoader.loadTestsFromTestCase(crc_cluster.Kheda_cluster),
-            unittest.defaultTestLoader.loadTestsFromTestCase(Kheda_Sandhana_cluster.Sandhana_cluster),
-            unittest.defaultTestLoader.loadTestsFromTestCase(CRC_Blockwise.Mahesana_test),
-            unittest.defaultTestLoader.loadTestsFromTestCase(Clusterwise_test.Gothva_cluster),
-            unittest.defaultTestLoader.loadTestsFromTestCase(cluster_table_record.Nav_cluster),
-            unittest.defaultTestLoader.loadTestsFromTestCase(Navsari_clusters.Navsari_cluster),
-            unittest.defaultTestLoader.loadTestsFromTestCase(Footer_data.Patan_cluster),
-            unittest.defaultTestLoader.loadTestsFromTestCase(Rajkot_Jasapur.Jasapur_cluster),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Footer_data.bar_details),
+            unittest.defaultTestLoader.loadTestsFromTestCase(map_cluster.Map_blocks),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Map_validation1.Map_District),
+            unittest.defaultTestLoader.loadTestsFromTestCase(map_validation2.Map_blocks),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Select_District_validate.District_report),
             unittest.defaultTestLoader.loadTestsFromTestCase(Select_Type.Sel_type),
             unittest.defaultTestLoader.loadTestsFromTestCase(Selecttype_files.Crc_Reports),
             unittest.defaultTestLoader.loadTestsFromTestCase(TableData_District.Crc_Reports),
-            unittest.defaultTestLoader.loadTestsFromTestCase(Vansada_cluster.Vansada_cluster),
-            unittest.defaultTestLoader.loadTestsFromTestCase(Vasad_blocktest.Valsad_Umbergaon),
-            unittest.defaultTestLoader.loadTestsFromTestCase(X_axis.Xaxis),
-            unittest.defaultTestLoader.loadTestsFromTestCase(Y_axis.Yaxis),
-            unittest.defaultTestLoader.loadTestsFromTestCase(CRC_District_Details.Ahmedabad_report),
-            unittest.defaultTestLoader.loadTestsFromTestCase(Mahesena_Gothva.Gothva_cluster),
-            unittest.defaultTestLoader.loadTestsFromTestCase(X_Yaxis.XYaxis),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Graph_xaxis_dropdown.Xaxis),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Graph_XY.XYaxis),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Graph_Yaxis.Yaxis)
+
         ])
 
-        outfile = open("/home/chetan/PycharmProjects/cQube/Report/CRC_report.html", "w")
+        outfile = open("/home/chetan/cQube-New/Reports/crc_report.html", "w")
 
         runner1 = HTMLTestRunner.HTMLTestRunner(
             stream=outfile,

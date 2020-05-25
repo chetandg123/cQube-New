@@ -2,15 +2,16 @@ import csv
 import time
 import unittest
 
-from Data.Paramters import Data
 from selenium import webdriver
 
+from Data.parameters import Data
 from TS.reuse_func import cqube
+from get_dir import pwd
 
 
-class Chatrali_test(unittest.TestCase):
+class test_onclick_cluster(unittest.TestCase):
     def setUp(self):
-        dri = Data()
+        dri = pwd()
         self.driver = webdriver.Chrome(dri.get_driver_path())
         driver = cqube(self.driver)
         driver.open_cqube_appln()

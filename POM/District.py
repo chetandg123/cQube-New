@@ -6,12 +6,12 @@ from selenium.webdriver import ActionChains
 
 from Data.parameters import Data
 from TS.reuse_func import cqube
+from get_dir import pwd
 
-
+dri = pwd()
 class Districts(unittest.TestCase):
     @classmethod
     def setUp(self):
-        dri = Data()
         self.driver = webdriver.Chrome(dri.get_driver_path())
         driver = cqube(self.driver)
         driver.open_cqube_appln()
@@ -19,9 +19,10 @@ class Districts(unittest.TestCase):
         driver.navigate_to_student_report()
 
     def test_click_on_districtnames(self):
-        distnames = self.driver.find_elements_by_xpath(Data.Dnames)
-        for i in range(len(distnames)):
-            print(distnames[i].text)
+        time.sleep(5)
+        driver = cqube(self.driver)
+        driver.dots_dist()
+        driver.Click_HomeButton()
 
     def tearDown(self):
         time.sleep(3)

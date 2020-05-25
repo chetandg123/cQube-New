@@ -4,31 +4,24 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 
-from Data.Paramters import Data
+from Data.parameters import Data
+from TS.reuse_func import cqube
+from get_dir import pwd
 
 
 class Districts(unittest.TestCase):
     @classmethod
-
     def setUp(self):
-        time.sleep(3)
-        self.driver = webdriver.Chrome(Data.Path)
-        self.driver.maximize_window()
-        self.driver.implicitly_wait(10)
-        self.driver.get(Data.URL)
-        print(self.driver.title)
-        self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
-        self.driver.find_element_by_xpath(Data.pwd).send_keys(Data.password)
-        self.driver.find_element_by_xpath(Data.loginbtn).click()
-        time.sleep(5)
-
+          dri = pwd()
+          self.driver = webdriver.Chrome(dri.get_driver_path())
+          driver = cqube(self.driver)
+          driver.open_cqube_appln()
+          driver.login_cqube()
+          driver.navigate_to_semester_report()
     def test_click_on_districtnames(self):
-        self.driver.find_element_by_xpath(Data.Dashboard).click()
-        time.sleep(3)
-        self.driver.find_element_by_xpath(Data.SR).click()
         time.sleep(5)
 
-        distnames = self.driver.find_elements_by_xpath(Data.Distoptions)
+        distnames = self.driver.find_elements_by_xpath(Data.Dnames)
         details = self.driver.find_elements_by_xpath(Data.details)
         for i in range(len(distnames)):
             distnames[i].click()
@@ -39,7 +32,7 @@ class Districts(unittest.TestCase):
             students=self.driver.find_element_by_xpath(Data.students).text
             print(distnames[i].text, "dots : ", count," ",school," ",students )
             time.sleep(4)
-
+            self.assertNotEqual(0,count,msg="mis match found")
 
     def tearDown(self):
         self.driver.close()

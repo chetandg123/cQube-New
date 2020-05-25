@@ -7,11 +7,12 @@ from selenium.webdriver import ActionChains
 
 from Data.parameters import Data
 from TS.reuse_func import cqube
+from get_dir import pwd
 
 
 class Semester_Home(unittest.TestCase):
     def setUp(self):
-        dri = Data()
+        dri = pwd()
         self.driver = webdriver.Chrome(dri.get_driver_path())
         driver = cqube(self.driver)
         driver.open_cqube_appln()

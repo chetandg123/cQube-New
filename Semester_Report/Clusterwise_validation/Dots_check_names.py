@@ -6,11 +6,12 @@ from selenium.webdriver import ActionChains
 
 from Data.parameters import Data
 from TS.reuse_func import cqube
+from get_dir import pwd
 
 
-class Ghandinagar_test(unittest.TestCase):
+class District_dots_check(unittest.TestCase):
     def setUp(self):
-        dri = Data()
+        dri = pwd()
         self.driver = webdriver.Chrome(dri.get_driver_path())
         driver = cqube(self.driver)
         driver.open_cqube_appln()

@@ -5,12 +5,13 @@ from selenium import webdriver
 
 from Data.parameters import Data
 from TS.reuse_func import cqube
+from get_dir import pwd
 
 
-class Ahmedabad_report(unittest.TestCase):
+class District_report(unittest.TestCase):
     def setUp(self):
-        dri = Data()
-        self.driver = webdriver.Chrome(dri.get_driver_path())
+        path_exe = pwd()
+        self.driver = webdriver.Chrome(path_exe.get_driver_path())
         driver = cqube(self.driver)
         driver.open_cqube_appln()
         driver.login_cqube()

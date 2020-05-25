@@ -6,12 +6,13 @@ from selenium.webdriver import ActionChains
 
 from Data.parameters import Data
 from TS.reuse_func import cqube
+from get_dir import pwd
 
 
-class Tapi_blkwise(unittest.TestCase):
+class check_blkwise(unittest.TestCase):
     @classmethod
     def setUp(self):
-        dri = Data()
+        dri = pwd()
         self.driver = webdriver.Chrome(dri.get_driver_path())
         driver = cqube(self.driver)
         driver.open_cqube_appln()

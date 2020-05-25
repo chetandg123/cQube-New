@@ -1,7 +1,9 @@
 from HTMLTestRunner import HTMLTestRunner
 import unittest
 
-from User_create import user_pwd_click, click_on_usercreate, Fillup_user, Negative_changepwd, set_new_password
+from User_create import user_pwd_click, click_on_usercreate, Fillup_user, Negative_changepwd, set_new_password, \
+    Roles_test
+from get_dir import pwd
 
 
 class MyTestSuite(unittest.TestCase):
@@ -16,9 +18,10 @@ class MyTestSuite(unittest.TestCase):
             unittest.defaultTestLoader.loadTestsFromTestCase(Fillup_user.Fillup_user),
             unittest.defaultTestLoader.loadTestsFromTestCase(Negative_changepwd.Click_ChangePwd),
             unittest.defaultTestLoader.loadTestsFromTestCase(set_new_password.Click_ChangePassword),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Roles_test.select_each_roles)
         ])
-
-        outfile = open("/home/chetan/PycharmProjects/cQube/Report/User_validation.html", "w")
+        report = pwd()
+        outfile = open(report.get_report_path(), "w")
 
         runner1 = HTMLTestRunner.HTMLTestRunner(
             stream=outfile,
