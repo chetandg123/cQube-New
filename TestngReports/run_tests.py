@@ -7,7 +7,7 @@ from selenium.webdriver.support.select import Select
 from Data.parameters import Data
 from TS.arg import arg
 from TS.reuse_func import cqube
-from TestNG.cqube import MyTestSuite
+from TestngReports.cqube import MyTestSuite
 from  get_dir import pwd
 #pwd = Data()
 p = pwd()
