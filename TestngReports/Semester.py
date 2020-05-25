@@ -13,6 +13,7 @@ from Semester_Report.Clusterwise_validation import Block_cluster, click_on_Distr
     cluster_click_gohome, Clusterdata, Clusters_check, Clusters_test, clusterwise, click_on_Cluster_validation, \
     Dist_block_cluster, Dist_dotcount, District_clusters, District_clusterwise, Dots_check_names, home_icon, \
     Testing_records, Validate_district_cluster
+from get_dir import pwd
 
 
 class Dots_Validation_Block(object):
@@ -82,8 +83,8 @@ class MyTestSuite(unittest.TestCase):
             unittest.defaultTestLoader.loadTestsFromTestCase(Validate_district_cluster.District_dots_test)
 
         ])
-
-        outfile = open("/home/chetan/PycharmProjects/cQube/Report/SemesterReport.html", "w")
+        dir  =pwd()
+        outfile = open(dir.get_report_path(), "w")
 
         runner1 = HTMLTestRunner.HTMLTestRunner(
             stream=outfile,

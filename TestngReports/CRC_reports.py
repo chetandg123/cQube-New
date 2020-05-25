@@ -8,6 +8,7 @@ from CRC_Report import cluster_table_record, Cluster_wise_file, Clusterwise_test
     District_click_all, District_wise_file, Districtwise_file, Districtwise_validation, Footer_data, map_cluster, \
     Map_validation1, map_validation2, Select_District_validate, Select_Type, Selecttype_files, TableData_District, \
     Graph_xaxis_dropdown, Graph_XY, Graph_Yaxis
+from get_dir import pwd
 
 
 class MyTestSuite(unittest.TestCase):
@@ -46,7 +47,8 @@ class MyTestSuite(unittest.TestCase):
 
         ])
 
-        outfile = open("/home/chetan/cQube-New/Reports/crc_report.html", "w")
+        dir = pwd()
+        outfile = open(dir.get_report_path(), "w")
 
         runner1 = HTMLTestRunner.HTMLTestRunner(
             stream=outfile,
