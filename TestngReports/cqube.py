@@ -7,12 +7,7 @@ from TS import click_on_cqube_login, click_on_blocks, check_cluster_wise_report,
     click_on_cluster, click_on_homeButton, click_on_logout, click_on_schools
 from TS.click_on_cqube_login import CqubeLogin
 from get_dir import pwd
-p = pwd()
-sys.path.append(p.get_system_path())
 
-
-pwd = Data()
-sys.path.append(pwd.get_system_path())
 
 class MyTestSuite(unittest.TestCase):
 
