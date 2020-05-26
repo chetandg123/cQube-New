@@ -18,7 +18,7 @@ class table_recordtest(unittest.TestCase):
         driver.login_cqube()
 
     def test_crcclick(self):
-        time.sleep(25)
+        time.sleep(30)
         dist = self.driver.find_element_by_xpath(Data.CRD18).click()
 
         blk = self.driver.find_element_by_xpath(Data.CRB2).click()
@@ -28,8 +28,6 @@ class table_recordtest(unittest.TestCase):
         time.sleep(5)
         self.driver.find_element_by_xpath(Data.Download).click()
         time.sleep(5)
-        count = self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-bar-chart/div/div[5]/div[2]/span").text
-        self.assertNotEqual(0,count,"mis match found")
 
 
 

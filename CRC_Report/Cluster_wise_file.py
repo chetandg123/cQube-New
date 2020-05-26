@@ -24,10 +24,7 @@ class Crc_Reports(unittest.TestCase):
         driver =cqube(self.driver)
         driver.crc_validation()
         time.sleep(5)
-        with open("Datafiles/Block_level_CRC_Report (2).csv", 'r') as file:
-            reader = csv.reader(file)
-            for row in reader:
-                print(row)
+
     def tearDown(self):
             time.sleep(5)
             self.driver.close()

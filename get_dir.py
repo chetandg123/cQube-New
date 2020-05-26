@@ -14,7 +14,7 @@ class pwd():
 
     def get_report_path(self):
         cwd = os.path.dirname(__file__)
-        report_path = os.path.join(cwd, 'Reports/TS_report.html')
+        report_path = os.path.join(cwd, 'CRC_Report.html')
         return report_path
 
     def get_screenshot_path(self):
