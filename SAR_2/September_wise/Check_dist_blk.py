@@ -10,7 +10,7 @@ from TS.reuse_func import cqube
 from get_dir import pwd
 
 
-class cityblock_validation(unittest.TestCase):
+class Block_validation(unittest.TestCase):
     @classmethod
     def setUp(self):
         dri = pwd()

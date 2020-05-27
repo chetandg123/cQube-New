@@ -27,7 +27,7 @@ class Click_ChangePassword(unittest.TestCase):
         self.driver.find_element_by_xpath("//input[@name='newPasswd']").send_keys("1234")
         time.sleep(2)
         self.driver.find_element_by_xpath("//input[@name='cnfpass']").send_keys("1234")
-        self.driver.find_element_by_xpath("//button[@type='submit']").click()
+        # self.driver.find_element_by_xpath("//button[@type='submit']").click()
         time.sleep(2)
         print(self.driver.get_screenshot_as_file("/home/chetan/cQube-New/Screenshots/pass_sermsg.png"))
         time.sleep(5)

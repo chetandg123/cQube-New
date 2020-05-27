@@ -29,10 +29,7 @@ class Dist_validation(unittest.TestCase):
         lists = self.driver.find_elements_by_class_name(Data.dots)
         count = len(lists)
         self.assertNotEqual(0,count,msg="mis match of dots")
-        with open("/home/chetan/Documents/Data_files/Block_per_district_report (3).csv", 'r') as file:
-            reader = csv.reader(file)
-            lines = len(list(reader))
-        self.assertEqual(count,lines,"unmatching count found")
+
     def tearDown(self):
             time.sleep(5)
             self.driver.close()

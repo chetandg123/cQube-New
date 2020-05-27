@@ -18,7 +18,7 @@ class District_recordtest(unittest.TestCase):
         driver.navigate_to_crc_report()
 
     def test_crcclick(self):
-        time.sleep(25)
+        time.sleep(35)
         self.driver.find_element_by_xpath(Data.CRD1).click()
         time.sleep(5)
         self.driver.find_element_by_xpath(Data.CRB1).click()
@@ -27,11 +27,6 @@ class District_recordtest(unittest.TestCase):
         driver.crcDist_click()
     def tearDown(self):
         time.sleep(4)
-        footer = self.driver.find_elements_by_xpath(Data.footer)
-        for i in range(len(footer)):
-            print(footer[i].text)
-            time.sleep(5)
-            self.driver.close()
 
     if __name__ == "__main__":
         unittest.main()

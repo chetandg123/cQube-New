@@ -29,13 +29,7 @@ class dist_test(unittest.TestCase):
         time.sleep(5)
         lists = self.driver.find_elements_by_class_name(Data.dots)
         count = len(lists)
-        print("no of dots:",count)
-        time.sleep(20)
-        with open("/home/chetan/Documents/Data_files/Schools_Per_Cluster_report (7).csv", 'r') as file:
-            reader = csv.reader(file)
-            lines = len(list(reader))
-            print("no of records in file:",lines)
-        self.assertEqual(count,lines,"unmatching count found")
+        self.assertNotEqual(0,count,msg="Failed")
     def tearDown(self):
             time.sleep(5)
             self.driver.close()

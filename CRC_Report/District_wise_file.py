@@ -22,6 +22,8 @@ class Crc_Reports(unittest.TestCase):
         time.sleep(30)
         self.driver.find_element_by_xpath("//*[@id='select']/select/option[2]").click()
         time.sleep(2)
+        self.driver.find_element_by_xpath(Data.Download_icon).click()
+        time.sleep(3)
     def tearDown(self):
             time.sleep(5)
             self.driver.close()

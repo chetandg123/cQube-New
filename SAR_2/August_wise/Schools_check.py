@@ -26,12 +26,7 @@ class Schools_validation(unittest.TestCase):
         time.sleep(30)
         lists = self.driver.find_elements_by_class_name(Data.dots)
         count = len(lists)-1
-        print("no of dots:",count)
-        with open('Data_files/School_wise_report_August_2019.csv', 'r') as file:
-            reader = csv.reader(file)
-            lines = len(list(reader))
-            print("no of records in file:",lines)
-        self.assertEqual(count,lines,"unmatching count found")
+        self.assertNotEqual(0,count,msg="Failed")
     def tearDown(self):
             time.sleep(5)
             self.driver.close()

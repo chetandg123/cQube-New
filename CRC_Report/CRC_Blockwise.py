@@ -19,7 +19,7 @@ class crc_cluster_test(unittest.TestCase):
         driver.navigate_to_crc_report()
 
     def test_crcclick(self):
-        time.sleep(30)
+        time.sleep(40)
         dist = self.driver.find_element_by_xpath(Data.CRD18).click()
         blk = self.driver.find_element_by_xpath(Data.CRB5).click()
         time.sleep(5)

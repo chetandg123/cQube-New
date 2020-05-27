@@ -1,6 +1,7 @@
 import csv
 import time
 import unittest
+import re
 
 from selenium import webdriver
 
@@ -19,21 +20,12 @@ class cluster_test(unittest.TestCase):
         driver.navigate_to_crc_report()
 
     def test_crcclick(self):
-        time.sleep(30)
-        dist = self.driver.find_element_by_xpath(Data.CRD17).click()
-        disttxt = self.driver.find_element_by_xpath(Data.CRD17).text
+        time.sleep(40)
+        dist = self.driver.find_element_by_xpath(Data.CRD16).click()
+        block = self.driver.find_element_by_xpath(Data.CRB7).click()
         time.sleep(5)
-        blk = self.driver.find_element_by_xpath().click()
-        block = self.driver.find_element_by_xpath(Data.CRB7).text
-        time.sleep(5)
-
         self.driver.find_element_by_xpath(Data.CRC2).click()
         time.sleep(5)
-        self.driver.find_element_by_xpath(Data.Download).click()
-        time.sleep(5)
-        count = self.driver.find_element_by_xpath(Data.no_schools).text
-
-        self.assertNotEqual(0,count, "unmatching count found")
 
 
     def tearDown(self):

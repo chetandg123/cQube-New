@@ -17,8 +17,7 @@ class crc_report(unittest.TestCase):
         driver.login_cqube()
         driver.navigate_to_crc_report()
     def test_crcclick(self):
-        time.sleep(30)
-
+        time.sleep(40)
         self.driver.find_element_by_xpath(Data.CRD1).click()
         time.sleep(5)
         driver = cqube(self.driver)

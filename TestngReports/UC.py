@@ -20,8 +20,8 @@ class MyTestSuite(unittest.TestCase):
             unittest.defaultTestLoader.loadTestsFromTestCase(set_new_password.Click_ChangePassword),
             unittest.defaultTestLoader.loadTestsFromTestCase(Roles_test.select_each_roles)
         ])
-        report = pwd()
-        outfile = open(report.get_report_path(), "w")
+        # report = pwd()
+        outfile = open("/home/chetan/cQube-New/Reports/user_create.html", "w")
 
         runner1 = HTMLTestRunner.HTMLTestRunner(
             stream=outfile,

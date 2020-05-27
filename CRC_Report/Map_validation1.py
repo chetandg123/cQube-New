@@ -18,7 +18,7 @@ class Map_District(unittest.TestCase):
         driver.login_cqube()
         driver.navigate_to_crc_report()
     def test_crcclick(self):
-        time.sleep(25)
+        time.sleep(30)
         dist = self.driver.find_element_by_xpath(Data.CRD5).click()
         driver = cqube(self.driver)
         driver.X_axis()

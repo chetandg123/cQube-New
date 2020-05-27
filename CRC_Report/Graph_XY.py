@@ -18,17 +18,9 @@ class XYaxis(unittest.TestCase):
         driver.navigate_to_crc_report()
     def test_click_xyaxis(self):
 
-        time.sleep(20)
-        xaxis_lists =self.driver.find_elements_by_xpath(Data.xaxis)
-        yaxis_lists = self.driver.find_elements_by_xpath(Data.yaxis)
-        for i in range(len(xaxis_lists)):
-            xaxis_lists[i].click()
-            print(xaxis_lists[i].text)
-            time.sleep(4)
-            for j in range(len(yaxis_lists)):
-                yaxis_lists[i].click()
-                print(yaxis_lists[j].text)
-                time.sleep(4)
+        time.sleep(30)
+        driver = cqube(self.driver)
+        driver.x_yaxis()
 
 
 

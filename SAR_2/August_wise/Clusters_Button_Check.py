@@ -24,14 +24,9 @@ class Clusters_validation(unittest.TestCase):
 
         self.driver.find_element_by_xpath(Data.Clusters).click()
         time.sleep(20)
-        self.driver.find_element_by_xpath(Data.Download).click()
         lists = self.driver.find_elements_by_class_name(Data.dots)
         count = len(lists) - 1
         self.assertNotEqual(0, count, msg="Failed")
-        no_schools = self.driver.find_element_by_xpath(Data.No_schools).text
-        str = no_schools
-        res = re.sub("\D", "", str)
-        self.assertEqual(count, int(res), msg="mis matching found!")
 
     def tearDown(self):
             time.sleep(5)

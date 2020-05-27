@@ -19,7 +19,7 @@ class CRCtest_cluster(unittest.TestCase):
         driver.navigate_to_crc_report()
 
     def test_crcclick(self):
-        time.sleep(25)
+        time.sleep(35)
         dist = self.driver.find_element_by_xpath(Data.CRD3).click()
         disttxt = self.driver.find_element_by_xpath(Data.CRD3).text
         self.assertEqual(Data.value2,disttxt,"is not selected ")

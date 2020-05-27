@@ -10,7 +10,7 @@ from TS.reuse_func import cqube
 from get_dir import pwd
 
 
-class simar_dist(unittest.TestCase):
+class District_check(unittest.TestCase):
     @classmethod
     def setUp(self):
         dri = pwd()

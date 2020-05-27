@@ -20,7 +20,8 @@ class Crc_Reports(unittest.TestCase):
         time.sleep(30)
         driver = cqube(self.driver)
         driver.crc_validation()
-        driver.ClickOn_HomeButton()
+        time.sleep(2)
+        self.driver.find_element_by_id("home").click()
 
     def tearDown(self):
             time.sleep(5)

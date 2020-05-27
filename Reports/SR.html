@@ -1,0 +1,3015 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2020-05-26 18:23:28</p>
+<p class='attribute'><strong>Duration:</strong> 1:34:48.792566</p>
+<p class='attribute'><strong>Status:</strong> Pass 27 Failure 2 Error 27</p>
+
+<p class='description'>Integration Testing of Semester Assessment</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Block_Btn_click.blockbtn_click</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_blockbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Number of students: 36,49,437
+Number of schools: 31,785
+Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Block_Btn_click.py", line 26, in test_blockbtn
+    driver.ClickOn_HomeButton()
+AttributeError: 'cqube' object has no attribute 'ClickOn_HomeButton'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Block_Dots_validation.District_count</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_Block</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Block_test.District_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_Block_cluster</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Blocks_btn.School_click</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='ft4.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_click_on_blocks</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        error</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Blocks_btn.py", line 22, in test_click_on_blocks
+    self.driver.find_elements_by_xpath(Data.Blocks).click()
+AttributeError: 'list' object has no attribute 'click'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Blocks_dots.count_dots</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_District</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Cluster_btn_click.blockbtn_click</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='ft6.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
+        error</a>
+
+    <div id='div_ft6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Cluster_btn_click.py", line 21, in test_clusterbtn
+    self.driver.find_element_by_xpath(Data.Clusters).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;b _ngcontent-cvq-c54="" style="font-family: Arial;"&gt;...&lt;/b&gt; is not clickable at point (131, 83). Other element would receive the click: &lt;div class="mat-drawer-backdrop ng-star-inserted"&gt;&lt;/div&gt;
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Count_records.District_block</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_District</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Data_test.District_dots_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_blocks</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Data_validations.District_block</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_District</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Dist18_Records.dots_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_District</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Dist_block_dots.Dots_test</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c11',1)">Detail</a></td>
+</tr>
+
+<tr id='ft11.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_validate_District</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft11.1')" >
+        error</a>
+
+    <div id='div_ft11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft11.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Dist_block_dots.py", line 28, in test_validate_District
+    self.driver.find_element_by_xpath(Data.SARD27).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[2]/div[2]/select[1]/option[28]"}
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.District_block_clicks.Districts</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c12',1)">Detail</a></td>
+</tr>
+
+<tr id='ft12.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_click_on_districtnames</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft12.1')" >
+        error</a>
+
+    <div id='div_ft12.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft12.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft12.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/District_block_clicks.py", line 31, in test_click_on_districtnames
+    school =self.driver.find_element_by_xpath(Data.schoolcount).text
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":" /html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[4]/div[2]/span"}
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.District_block_cluster.District_Records</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c13',1)">Detail</a></td>
+</tr>
+
+<tr id='pt13.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_schoolrecords</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='failClass'>
+    <td>Semester_Report.District_check.Semester_Home</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
+</tr>
+
+<tr id='ft14.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_Distnames</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft14.1')" >
+        fail</a>
+
+    <div id='div_ft14.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft14.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft14.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/District_check.py", line 24, in test_Distnames
+    self.assertNotEqual(0,count,msg="mis matching!")
+AssertionError: 0 == 0 : mis matching!
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.District_dataTest.Semester_Home</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c15',1)">Detail</a></td>
+</tr>
+
+<tr id='pt15.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dist</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt15.1')" >
+        pass</a>
+
+    <div id='div_pt15.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt15.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt15.1: Choose a District
+ Ahmedabad 
+ Amreli 
+ Anand 
+ Aravalli 
+ Banaskantha 
+ Bharuch 
+ Bhavnagar 
+ Botad 
+ Chhotaudepur 
+ Devbhoomi Dwarka 
+ Dohad 
+ Gandhinagar 
+ Gir Somnath 
+ Jamnagar 
+ Junagadh 
+ Kachchh 
+ Kheda 
+ Mahesana 
+ Mahisagar 
+ Morbi 
+ Narmada 
+ Navsari 
+ Panch Mahals 
+ Patan 
+ Porbandar 
+ Rajkot 
+ Sabar Kantha 
+ Surat 
+ Surendranagar 
+ Tapi 
+ The Dangs 
+ Vadodara 
+ Valsad 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.District_dots.block_dots_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c16',1)">Detail</a></td>
+</tr>
+
+<tr id='pt16.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_District</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.DistrictNames.Semester_Dist_names</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>2</td>
+    <td><a href="javascript:showClassDetail('c17',2)">Detail</a></td>
+</tr>
+
+<tr id='ft17.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_Distnames</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft17.1')" >
+        error</a>
+
+    <div id='div_ft17.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft17.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft17.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/DistrictNames.py", line 23, in test_Distnames
+    self.driver.find_elements_by_xpath(Data.SRD32).click()
+AttributeError: 'list' object has no attribute 'click'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft17.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_Distnames</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft17.2')" >
+        error</a>
+
+    <div id='div_ft17.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft17.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft17.2: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/DistrictNames.py", line 28, in tearDown
+    time.sleep()
+TypeError: sleep() takes exactly one argument (0 given)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.records_check.click_on_District_block</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c18',1)">Detail</a></td>
+</tr>
+
+<tr id='pt18.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_Blocks</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Dots_check.validate_clicking_function</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c19',1)">Detail</a></td>
+</tr>
+
+<tr id='ft19.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_validate_District</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft19.1')" >
+        error</a>
+
+    <div id='div_ft19.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft19.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft19.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Dots_check.py", line 20, in setUp
+    driver.navigate_to_semester_report()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 46, in navigate_to_semester_report
+    self.driver.find_element_by_xpath(Data.Dashboard).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@class='mat-button-wrapper']/mat-icon"}
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Login_Page.Semester_click</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c20',1)">Detail</a></td>
+</tr>
+
+<tr id='ft20.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_semester</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft20.1')" >
+        error</a>
+
+    <div id='div_ft20.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft20.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft20.1: Number of students: 36,56,092
+Number of schools: 31,817
+Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Login_Page.py", line 24, in test_semester
+    driver.ClickOn_HomeButton()
+AttributeError: 'cqube' object has no attribute 'ClickOn_HomeButton'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Random_dots.countdots_dist</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c21',1)">Detail</a></td>
+</tr>
+
+<tr id='pt21.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_schoolrecords</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.School_records_District.check_blkwise</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c22',1)">Detail</a></td>
+</tr>
+
+<tr id='pt22.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_on_blockwise</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.SR_Home.Semester_Home</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c23',1)">Detail</a></td>
+</tr>
+
+<tr id='pt23.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_semester</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.SR_HomeBtn.Dist_validation</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c24',1)">Detail</a></td>
+</tr>
+
+<tr id='ft24.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_validate_District</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft24.1')" >
+        error</a>
+
+    <div id='div_ft24.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft24.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft24.1: Number of students: 87,148
+Number of schools: 621
+Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/SR_HomeBtn.py", line 31, in test_validate_District
+    driver.ClickOn_HomeButton()
+AttributeError: 'cqube' object has no attribute 'ClickOn_HomeButton'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Clusterwise_validation.Block_cluster.Dist_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c25',1)">Detail</a></td>
+</tr>
+
+<tr id='pt25.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt25.1')" >
+        pass</a>
+
+    <div id='div_pt25.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt25.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt25.1: None
+Choose a District : 25
+None
+ Ahmedabad  : 11
+None
+ Amreli  : 11
+None
+ Anand  : 8
+None
+ Aravalli  : 6
+None
+ Banaskantha  : 14
+None
+ Bharuch  : 9
+None
+ Bhavnagar  : 10
+None
+ Botad  : 4
+None
+ Chhotaudepur  : 6
+None
+ Devbhoomi Dwarka  : 4
+None
+ Dohad  : 8
+None
+ Gandhinagar  : 4
+None
+ Gir Somnath  : 6
+None
+ Jamnagar  : 6
+None
+ Junagadh  : 10
+None
+ Kachchh  : 10
+None
+ Kheda  : 10
+None
+ Mahesana  : 10
+None
+ Mahisagar  : 6
+None
+ Morbi  : 5
+None
+ Narmada  : 5
+None
+ Navsari  : 6
+None
+ Panch Mahals  : 7
+None
+ Patan  : 9
+None
+ Porbandar  : 3
+None
+ Rajkot  : 12
+None
+ Sabar Kantha  : 8
+None
+ Surat  : 10
+None
+ Surendranagar  : 10
+None
+ Tapi  : 5
+None
+ The Dangs  : 3
+None
+ Vadodara  : 9
+None
+ Valsad  : 6
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.click_on_District.District_test</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c26',1)">Detail</a></td>
+</tr>
+
+<tr id='ft26.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft26.1')" >
+        error</a>
+
+    <div id='div_ft26.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft26.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft26.1: cQube
+None
+Choose a District : 19
+None
+ Ahmedabad  : 11
+None
+ Amreli  : 11
+None
+ Anand  : 8
+None
+ Aravalli  : 6
+None
+ Banaskantha  : 14
+None
+ Bharuch  : 9
+None
+ Bhavnagar  : 10
+None
+ Botad  : 4
+None
+ Chhotaudepur  : 6
+None
+ Devbhoomi Dwarka  : 4
+None
+ Dohad  : 8
+None
+ Gandhinagar  : 4
+None
+ Gir Somnath  : 6
+None
+ Jamnagar  : 6
+None
+ Junagadh  : 10
+None
+ Kachchh  : 10
+None
+ Kheda  : 10
+None
+ Mahesana  : 10
+None
+ Mahisagar  : 6
+None
+ Morbi  : 5
+None
+ Narmada  : 5
+None
+ Navsari  : 6
+None
+ Panch Mahals  : 7
+None
+ Patan  : 9
+None
+ Porbandar  : 3
+None
+ Rajkot  : 12
+None
+ Sabar Kantha  : 8
+None
+ Surat  : 10
+None
+ Surendranagar  : 10
+None
+ Tapi  : 5
+None
+ The Dangs  : 3
+None
+ Vadodara  : 9
+None
+ Valsad  : 6
+Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/click_on_District.py", line 31, in test_clusterbtn
+    driver.ClickOn_HomeButton()
+AttributeError: 'cqube' object has no attribute 'ClickOn_HomeButton'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.clickon_Clusterbtn.clusterbtn_click</td>
+    <td>2</td>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c27',2)">Detail</a></td>
+</tr>
+
+<tr id='ft27.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft27.1')" >
+        fail</a>
+
+    <div id='div_ft27.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft27.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft27.1: Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 813, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: [] != 25000 : dots are not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/clickon_Clusterbtn.py", line 27, in test_clusterbtn
+    self.assertEqual(count,25000,"dots are not found")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: dots are not found :: [] != 25000
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft27.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft27.2')" >
+        error</a>
+
+    <div id='div_ft27.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft27.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft27.2: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/clickon_Clusterbtn.py", line 36, in tearDown
+    self.driver.close()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 688, in close
+    self.execute(Command.CLOSE)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Clusterwise_validation.Cluster_check.click_on_record</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c28',1)">Detail</a></td>
+</tr>
+
+<tr id='pt28.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt28.1')" >
+        pass</a>
+
+    <div id='div_pt28.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt28.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt28.1: None
+Choose a District : 21
+None
+ Ahmedabad  : 11
+None
+ Amreli  : 11
+None
+ Anand  : 8
+None
+ Aravalli  : 6
+None
+ Banaskantha  : 14
+None
+ Bharuch  : 9
+None
+ Bhavnagar  : 10
+None
+ Botad  : 4
+None
+ Chhotaudepur  : 6
+None
+ Devbhoomi Dwarka  : 4
+None
+ Dohad  : 8
+None
+ Gandhinagar  : 4
+None
+ Gir Somnath  : 6
+None
+ Jamnagar  : 6
+None
+ Junagadh  : 10
+None
+ Kachchh  : 10
+None
+ Kheda  : 10
+None
+ Mahesana  : 10
+None
+ Mahisagar  : 6
+None
+ Morbi  : 5
+None
+ Narmada  : 5
+None
+ Navsari  : 6
+None
+ Panch Mahals  : 7
+None
+ Patan  : 9
+None
+ Porbandar  : 3
+None
+ Rajkot  : 12
+None
+ Sabar Kantha  : 8
+None
+ Surat  : 10
+None
+ Surendranagar  : 10
+None
+ Tapi  : 5
+None
+ The Dangs  : 3
+None
+ Vadodara  : 9
+None
+ Valsad  : 6
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Clusterwise_validation.Cluster_checks.test_onclick_cluster</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c29',1)">Detail</a></td>
+</tr>
+
+<tr id='pt29.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.Cluster_data_Check.district_click</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c30',1)">Detail</a></td>
+</tr>
+
+<tr id='ft30.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft30.1')" >
+        error</a>
+
+    <div id='div_ft30.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft30.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft30.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/Cluster_data_Check.py", line 19, in setUp
+    driver.navigate_to_semester_report()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 46, in navigate_to_semester_report
+    self.driver.find_element_by_xpath(Data.Dashboard).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@class='mat-button-wrapper']/mat-icon"}
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Clusterwise_validation.Cluster_data_check.Distict_dots_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c31',1)">Detail</a></td>
+</tr>
+
+<tr id='pt31.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt31.1')" >
+        pass</a>
+
+    <div id='div_pt31.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt31.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt31.1: None
+Choose a District : 19
+None
+ Ahmedabad  : 11
+None
+ Amreli  : 11
+None
+ Anand  : 8
+None
+ Aravalli  : 6
+None
+ Banaskantha  : 14
+None
+ Bharuch  : 9
+None
+ Bhavnagar  : 10
+None
+ Botad  : 4
+None
+ Chhotaudepur  : 6
+None
+ Devbhoomi Dwarka  : 4
+None
+ Dohad  : 8
+None
+ Gandhinagar  : 4
+None
+ Gir Somnath  : 6
+None
+ Jamnagar  : 6
+None
+ Junagadh  : 10
+None
+ Kachchh  : 10
+None
+ Kheda  : 10
+None
+ Mahesana  : 10
+None
+ Mahisagar  : 6
+None
+ Morbi  : 5
+None
+ Narmada  : 5
+None
+ Navsari  : 6
+None
+ Panch Mahals  : 7
+None
+ Patan  : 9
+None
+ Porbandar  : 3
+None
+ Rajkot  : 12
+None
+ Sabar Kantha  : 8
+None
+ Surat  : 10
+None
+ Surendranagar  : 10
+None
+ Tapi  : 5
+None
+ The Dangs  : 3
+None
+ Vadodara  : 9
+None
+ Valsad  : 6
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Clusterwise_validation.Cluster_dot.block_click</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c32',1)">Detail</a></td>
+</tr>
+
+<tr id='pt32.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Clusterwise_validation.cluster_dot_clusternames.cluster_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c33',1)">Detail</a></td>
+</tr>
+
+<tr id='pt33.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt33.1')" >
+        pass</a>
+
+    <div id='div_pt33.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt33.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt33.1: None
+Choose a District : 53
+None
+ Ahmedabad  : 11
+None
+ Amreli  : 11
+None
+ Anand  : 8
+None
+ Aravalli  : 6
+None
+ Banaskantha  : 14
+None
+ Bharuch  : 9
+None
+ Bhavnagar  : 10
+None
+ Botad  : 4
+None
+ Chhotaudepur  : 6
+None
+ Devbhoomi Dwarka  : 4
+None
+ Dohad  : 8
+None
+ Gandhinagar  : 4
+None
+ Gir Somnath  : 6
+None
+ Jamnagar  : 6
+None
+ Junagadh  : 10
+None
+ Kachchh  : 10
+None
+ Kheda  : 10
+None
+ Mahesana  : 10
+None
+ Mahisagar  : 6
+None
+ Morbi  : 5
+None
+ Narmada  : 5
+None
+ Navsari  : 6
+None
+ Panch Mahals  : 7
+None
+ Patan  : 9
+None
+ Porbandar  : 3
+None
+ Rajkot  : 12
+None
+ Sabar Kantha  : 8
+None
+ Surat  : 10
+None
+ Surendranagar  : 10
+None
+ Tapi  : 5
+None
+ The Dangs  : 3
+None
+ Vadodara  : 9
+None
+ Valsad  : 6
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.Cluster_dots_count.dot_count_test</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c34',1)">Detail</a></td>
+</tr>
+
+<tr id='ft34.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft34.1')" >
+        error</a>
+
+    <div id='div_ft34.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft34.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft34.1: None
+Choose a District : 5
+None
+ Ahmedabad  : 11
+None
+ Amreli  : 11
+None
+ Anand  : 8
+None
+ Aravalli  : 6
+None
+ Banaskantha  : 14
+None
+ Bharuch  : 9
+None
+ Bhavnagar  : 10
+None
+ Botad  : 4
+None
+ Chhotaudepur  : 6
+None
+ Devbhoomi Dwarka  : 4
+None
+ Dohad  : 8
+None
+ Gandhinagar  : 4
+None
+ Gir Somnath  : 6
+None
+ Jamnagar  : 6
+None
+ Junagadh  : 10
+None
+ Kachchh  : 10
+None
+ Kheda  : 10
+None
+ Mahesana  : 10
+None
+ Mahisagar  : 6
+None
+ Morbi  : 5
+None
+ Narmada  : 5
+None
+ Navsari  : 6
+None
+ Panch Mahals  : 7
+None
+ Patan  : 9
+None
+ Porbandar  : 3
+None
+ Rajkot  : 12
+None
+ Sabar Kantha  : 8
+None
+ Surat  : 10
+None
+ Surendranagar  : 10
+None
+ Tapi  : 5
+None
+ The Dangs  : 3
+None
+ Vadodara  : 9
+None
+ Valsad  : 6
+Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/Cluster_dots_count.py", line 36, in test_clusterbtn
+    driver.ClickOn_HomeButton()
+AttributeError: 'cqube' object has no attribute 'ClickOn_HomeButton'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Clusterwise_validation.Cluster_level_dots.test_dot_records</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c35',1)">Detail</a></td>
+</tr>
+
+<tr id='pt35.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt35.1')" >
+        pass</a>
+
+    <div id='div_pt35.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt35.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt35.1: None
+Choose a District : 12
+None
+ Ahmedabad  : 11
+None
+ Amreli  : 11
+None
+ Anand  : 8
+None
+ Aravalli  : 6
+None
+ Banaskantha  : 14
+None
+ Bharuch  : 9
+None
+ Bhavnagar  : 10
+None
+ Botad  : 4
+None
+ Chhotaudepur  : 6
+None
+ Devbhoomi Dwarka  : 4
+None
+ Dohad  : 8
+None
+ Gandhinagar  : 4
+None
+ Gir Somnath  : 6
+None
+ Jamnagar  : 6
+None
+ Junagadh  : 10
+None
+ Kachchh  : 10
+None
+ Kheda  : 10
+None
+ Mahesana  : 10
+None
+ Mahisagar  : 6
+None
+ Morbi  : 5
+None
+ Narmada  : 5
+None
+ Navsari  : 6
+None
+ Panch Mahals  : 7
+None
+ Patan  : 9
+None
+ Porbandar  : 3
+None
+ Rajkot  : 12
+None
+ Sabar Kantha  : 8
+None
+ Surat  : 10
+None
+ Surendranagar  : 10
+None
+ Tapi  : 5
+None
+ The Dangs  : 3
+None
+ Vadodara  : 9
+None
+ Valsad  : 6
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Clusterwise_validation.Cluster_random.Radom_dots_match</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c36',1)">Detail</a></td>
+</tr>
+
+<tr id='pt36.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Clusterwise_validation.Cluster_record_check.Cluster_dots</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c37',1)">Detail</a></td>
+</tr>
+
+<tr id='pt37.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt37.1')" >
+        pass</a>
+
+    <div id='div_pt37.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt37.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt37.1: cQube
+None
+Choose a District : 6
+None
+ Ahmedabad  : 11
+None
+ Amreli  : 11
+None
+ Anand  : 8
+None
+ Aravalli  : 6
+None
+ Banaskantha  : 14
+None
+ Bharuch  : 9
+None
+ Bhavnagar  : 10
+None
+ Botad  : 4
+None
+ Chhotaudepur  : 6
+None
+ Devbhoomi Dwarka  : 4
+None
+ Dohad  : 8
+None
+ Gandhinagar  : 4
+None
+ Gir Somnath  : 6
+None
+ Jamnagar  : 6
+None
+ Junagadh  : 10
+None
+ Kachchh  : 10
+None
+ Kheda  : 10
+None
+ Mahesana  : 10
+None
+ Mahisagar  : 6
+None
+ Morbi  : 5
+None
+ Narmada  : 5
+None
+ Navsari  : 6
+None
+ Panch Mahals  : 7
+None
+ Patan  : 9
+None
+ Porbandar  : 3
+None
+ Rajkot  : 12
+None
+ Sabar Kantha  : 8
+None
+ Surat  : 10
+None
+ Surendranagar  : 10
+None
+ Tapi  : 5
+None
+ The Dangs  : 3
+None
+ Vadodara  : 9
+None
+ Valsad  : 6
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Clusterwise_validation.Cluster_records.check_datarecord_inleaflet</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c38',1)">Detail</a></td>
+</tr>
+
+<tr id='pt38.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt38.1')" >
+        pass</a>
+
+    <div id='div_pt38.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt38.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt38.1: None
+Choose a District : 34
+None
+ Ahmedabad  : 11
+None
+ Amreli  : 11
+None
+ Anand  : 8
+None
+ Aravalli  : 0
+None
+ Banaskantha  : 0
+None
+ Bharuch  : 0
+None
+ Bhavnagar  : 0
+None
+ Botad  : 0
+None
+ Chhotaudepur  : 0
+None
+ Devbhoomi Dwarka  : 0
+None
+ Dohad  : 0
+None
+ Gandhinagar  : 4
+None
+ Gir Somnath  : 6
+None
+ Jamnagar  : 6
+None
+ Junagadh  : 10
+None
+ Kachchh  : 10
+None
+ Kheda  : 10
+None
+ Mahesana  : 10
+None
+ Mahisagar  : 6
+None
+ Morbi  : 5
+None
+ Narmada  : 5
+None
+ Navsari  : 6
+None
+ Panch Mahals  : 7
+None
+ Patan  : 9
+None
+ Porbandar  : 3
+None
+ Rajkot  : 12
+None
+ Sabar Kantha  : 8
+None
+ Surat  : 10
+None
+ Surendranagar  : 10
+None
+ Tapi  : 5
+None
+ The Dangs  : 3
+None
+ Vadodara  : 9
+None
+ Valsad  : 6
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.Cluster_to_Dashboard.Dashobard_click</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c39',1)">Detail</a></td>
+</tr>
+
+<tr id='ft39.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft39.1')" >
+        error</a>
+
+    <div id='div_ft39.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft39.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft39.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/Cluster_to_Dashboard.py", line 19, in setUp
+    driver.navigate_to_semester_report()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 47, in navigate_to_semester_report
+    self.driver.find_element_by_xpath(Data.SR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.Cluster_validation.test_on_clusterrecords</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c40',1)">Detail</a></td>
+</tr>
+
+<tr id='ft40.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft40.1')" >
+        error</a>
+
+    <div id='div_ft40.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft40.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft40.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/Cluster_validation.py", line 19, in setUp
+    driver.navigate_to_semester_report()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 47, in navigate_to_semester_report
+    self.driver.find_element_by_xpath(Data.SR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.cluster_click_gohome.dots_test_gohome</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c41',1)">Detail</a></td>
+</tr>
+
+<tr id='ft41.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft41.1')" >
+        error</a>
+
+    <div id='div_ft41.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft41.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft41.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/cluster_click_gohome.py", line 19, in setUp
+    driver.navigate_to_semester_report()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 47, in navigate_to_semester_report
+    self.driver.find_element_by_xpath(Data.SR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.Clusterdata.district_record</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c42',1)">Detail</a></td>
+</tr>
+
+<tr id='ft42.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft42.1')" >
+        error</a>
+
+    <div id='div_ft42.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft42.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft42.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/Clusterdata.py", line 19, in setUp
+    driver.navigate_to_semester_report()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 47, in navigate_to_semester_report
+    self.driver.find_element_by_xpath(Data.SR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.Clusters_check.click_on_block</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c43',1)">Detail</a></td>
+</tr>
+
+<tr id='ft43.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_Gir</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft43.1')" >
+        error</a>
+
+    <div id='div_ft43.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft43.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft43.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/Clusters_check.py", line 19, in setUp
+    driver.navigate_to_semester_report()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 47, in navigate_to_semester_report
+    self.driver.find_element_by_xpath(Data.SR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.Clusters_test.Test_District_cluster</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c44',1)">Detail</a></td>
+</tr>
+
+<tr id='ft44.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft44.1')" >
+        error</a>
+
+    <div id='div_ft44.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft44.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft44.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/Clusters_test.py", line 19, in setUp
+    driver.navigate_to_semester_report()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 47, in navigate_to_semester_report
+    self.driver.find_element_by_xpath(Data.SR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Clusterwise_validation.clusterwise.Test_blockwise_dots</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c45',1)">Detail</a></td>
+</tr>
+
+<tr id='pt45.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt45.1')" >
+        pass</a>
+
+    <div id='div_pt45.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt45.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt45.1: None
+Choose a District : 15
+None
+ Ahmedabad  : 11
+None
+ Amreli  : 11
+None
+ Anand  : 8
+None
+ Aravalli  : 6
+None
+ Banaskantha  : 14
+None
+ Bharuch  : 9
+None
+ Bhavnagar  : 10
+None
+ Botad  : 4
+None
+ Chhotaudepur  : 6
+None
+ Devbhoomi Dwarka  : 4
+None
+ Dohad  : 8
+None
+ Gandhinagar  : 4
+None
+ Gir Somnath  : 6
+None
+ Jamnagar  : 6
+None
+ Junagadh  : 10
+None
+ Kachchh  : 10
+None
+ Kheda  : 10
+None
+ Mahesana  : 10
+None
+ Mahisagar  : 6
+None
+ Morbi  : 5
+None
+ Narmada  : 5
+None
+ Navsari  : 6
+None
+ Panch Mahals  : 7
+None
+ Patan  : 9
+None
+ Porbandar  : 3
+None
+ Rajkot  : 12
+None
+ Sabar Kantha  : 8
+None
+ Surat  : 10
+None
+ Surendranagar  : 10
+None
+ Tapi  : 5
+None
+ The Dangs  : 3
+None
+ Vadodara  : 9
+None
+ Valsad  : 6
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.click_on_Cluster_validation.click_on_cluster</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c46',1)">Detail</a></td>
+</tr>
+
+<tr id='ft46.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft46.1')" >
+        error</a>
+
+    <div id='div_ft46.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft46.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft46.1: no of amc dots : 17
+None
+Choose a District : 17
+None
+ Ahmedabad  : 11
+None
+ Amreli  : 11
+None
+ Anand  : 8
+None
+ Aravalli  : 0
+None
+ Banaskantha  : 14
+None
+ Bharuch  : 9
+None
+ Bhavnagar  : 10
+None
+ Botad  : 4
+None
+ Chhotaudepur  : 6
+None
+ Devbhoomi Dwarka  : 4
+None
+ Dohad  : 8
+None
+ Gandhinagar  : 4
+None
+ Gir Somnath  : 6
+None
+ Jamnagar  : 6
+None
+ Junagadh  : 10
+None
+ Kachchh  : 10
+None
+ Kheda  : 10
+None
+ Mahesana  : 10
+None
+ Mahisagar  : 6
+None
+ Morbi  : 5
+None
+ Narmada  : 5
+None
+ Navsari  : 6
+None
+ Panch Mahals  : 7
+None
+ Patan  : 9
+None
+ Porbandar  : 3
+None
+ Rajkot  : 12
+None
+ Sabar Kantha  : 8
+None
+ Surat  : 10
+None
+ Surendranagar  : 10
+None
+ Tapi  : 5
+None
+ The Dangs  : 3
+None
+ Vadodara  : 9
+None
+ Valsad  : 6
+Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/click_on_Cluster_validation.py", line 35, in test_clusterbtn
+    driver.ClickOn_HomeButton()
+AttributeError: 'cqube' object has no attribute 'ClickOn_HomeButton'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Clusterwise_validation.Dist_block_cluster.District_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c47',1)">Detail</a></td>
+</tr>
+
+<tr id='pt47.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt47.1')" >
+        pass</a>
+
+    <div id='div_pt47.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt47.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt47.1: None
+Choose a District : 16
+None
+ Ahmedabad  : 11
+None
+ Amreli  : 11
+None
+ Anand  : 8
+None
+ Aravalli  : 6
+None
+ Banaskantha  : 14
+None
+ Bharuch  : 9
+None
+ Bhavnagar  : 10
+None
+ Botad  : 4
+None
+ Chhotaudepur  : 6
+None
+ Devbhoomi Dwarka  : 4
+None
+ Dohad  : 8
+None
+ Gandhinagar  : 4
+None
+ Gir Somnath  : 6
+None
+ Jamnagar  : 6
+None
+ Junagadh  : 10
+None
+ Kachchh  : 10
+None
+ Kheda  : 10
+None
+ Mahesana  : 10
+None
+ Mahisagar  : 6
+None
+ Morbi  : 5
+None
+ Narmada  : 5
+None
+ Navsari  : 6
+None
+ Panch Mahals  : 7
+None
+ Patan  : 9
+None
+ Porbandar  : 3
+None
+ Rajkot  : 12
+None
+ Sabar Kantha  : 8
+None
+ Surat  : 10
+None
+ Surendranagar  : 10
+None
+ Tapi  : 5
+None
+ The Dangs  : 3
+None
+ Vadodara  : 9
+None
+ Valsad  : 6
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.Dist_dotcount.clickon_clusterecord</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c48',1)">Detail</a></td>
+</tr>
+
+<tr id='ft48.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft48.1')" >
+        error</a>
+
+    <div id='div_ft48.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft48.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft48.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/Dist_dotcount.py", line 19, in setUp
+    driver.navigate_to_semester_report()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 47, in navigate_to_semester_report
+    self.driver.find_element_by_xpath(Data.SR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.District_clusters.test_cluster</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c49',1)">Detail</a></td>
+</tr>
+
+<tr id='ft49.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft49.1')" >
+        error</a>
+
+    <div id='div_ft49.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft49.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft49.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/District_clusters.py", line 19, in setUp
+    driver.navigate_to_semester_report()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 47, in navigate_to_semester_report
+    self.driver.find_element_by_xpath(Data.SR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.District_clusterwise.click_block_clusters</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c50',1)">Detail</a></td>
+</tr>
+
+<tr id='ft50.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft50.1')" >
+        error</a>
+
+    <div id='div_ft50.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft50.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft50.1: None
+Choose a District : 9
+None
+ Ahmedabad  : 11
+None
+ Amreli  : 11
+None
+ Anand  : 8
+None
+ Aravalli  : 6
+None
+ Banaskantha  : 14
+None
+ Bharuch  : 9
+None
+ Bhavnagar  : 10
+None
+ Botad  : 4
+None
+ Chhotaudepur  : 6
+None
+ Devbhoomi Dwarka  : 4
+None
+ Dohad  : 8
+None
+ Gandhinagar  : 4
+None
+ Gir Somnath  : 6
+None
+ Jamnagar  : 6
+None
+ Junagadh  : 10
+None
+ Kachchh  : 10
+None
+ Kheda  : 10
+None
+ Mahesana  : 10
+None
+ Mahisagar  : 6
+None
+ Morbi  : 5
+None
+ Narmada  : 5
+None
+ Navsari  : 6
+None
+ Panch Mahals  : 7
+None
+ Patan  : 9
+None
+ Porbandar  : 3
+None
+ Rajkot  : 12
+None
+ Sabar Kantha  : 8
+None
+ Surat  : 10
+None
+ Surendranagar  : 10
+None
+ Tapi  : 5
+None
+ The Dangs  : 3
+None
+ Vadodara  : 9
+None
+ Valsad  : 6
+Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/District_clusterwise.py", line 33, in test_clusterbtn
+    driver.ClickOn_HomeButton()
+AttributeError: 'cqube' object has no attribute 'ClickOn_HomeButton'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.Dots_check_names.District_dots_check</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c51',1)">Detail</a></td>
+</tr>
+
+<tr id='ft51.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft51.1')" >
+        error</a>
+
+    <div id='div_ft51.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft51.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft51.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/Dots_check_names.py", line 19, in setUp
+    driver.navigate_to_semester_report()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 47, in navigate_to_semester_report
+    self.driver.find_element_by_xpath(Data.SR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Report.Clusterwise_validation.home_icon.Home_icon</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c52',1)">Detail</a></td>
+</tr>
+
+<tr id='pt52.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt52.1')" >
+        pass</a>
+
+    <div id='div_pt52.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt52.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt52.1: http://52.66.209.6:4200/#/home/semester-report
+http://52.66.209.6:4200/#/home/dashboard
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.Testing_records.Cluster_test</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c53',1)">Detail</a></td>
+</tr>
+
+<tr id='ft53.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft53.1')" >
+        error</a>
+
+    <div id='div_ft53.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft53.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft53.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/Testing_records.py", line 19, in setUp
+    driver.navigate_to_semester_report()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 47, in navigate_to_semester_report
+    self.driver.find_element_by_xpath(Data.SR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Report.Clusterwise_validation.Validate_district_cluster.District_dots_test</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c54',1)">Detail</a></td>
+</tr>
+
+<tr id='ft54.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft54.1')" >
+        error</a>
+
+    <div id='div_ft54.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft54.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft54.1: Traceback (most recent call last):
+  File "/home/chetan/cQube-New/Semester_Report/Clusterwise_validation/Validate_district_cluster.py", line 19, in setUp
+    driver.navigate_to_semester_report()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 47, in navigate_to_semester_report
+    self.driver.find_element_by_xpath(Data.SR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>56</td>
+    <td>27</td>
+    <td>2</td>
+    <td>27</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

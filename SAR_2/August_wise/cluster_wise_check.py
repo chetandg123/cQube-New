@@ -11,7 +11,7 @@ from TS.reuse_func import cqube
 from get_dir import pwd
 
 
-class Una_blocks(unittest.TestCase):
+class blocks_Data_test(unittest.TestCase):
     @classmethod
     def setUp(self):
         dri = pwd()
@@ -29,12 +29,7 @@ class Una_blocks(unittest.TestCase):
         lists = self.driver.find_elements_by_class_name(Data.dots)
         count = len(lists)
         self.assertNotEqual(0,count,msg="Failed")
-        time.sleep(20)
-        with open("/home/chetan/Documents/Data_files/Cluster_per_block_report (5).csv", 'r') as file:
-            reader = csv.reader(file)
-            lines = len(list(reader))
-            print("no of records in file:",lines)
-        self.assertEqual(count,lines,"unmatching count found")
+
     def tearDown(self):
             time.sleep(5)
             self.driver.close()

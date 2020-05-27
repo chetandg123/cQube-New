@@ -84,7 +84,7 @@ class MyTestSuite(unittest.TestCase):
 
         ])
         dir  =pwd()
-        outfile = open(dir.get_report_path(), "w")
+        outfile = open("/home/chetan/cQube-New/Reports/SR.html", "w")
 
         runner1 = HTMLTestRunner.HTMLTestRunner(
             stream=outfile,

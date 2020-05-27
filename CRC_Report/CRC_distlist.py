@@ -15,7 +15,7 @@ class District_list(unittest.TestCase):
         driver = cqube(self.driver)
         driver.open_cqube_appln()
         driver.login_cqube()
-        driver.navigate_to_student_report()
+        driver.navigate_to_crc_report()
     def test_District(self):
         lists = self.driver.find_elements_by_xpath(Data.crcdist)
         for i in range(len(lists)):

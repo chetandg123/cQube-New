@@ -165,6 +165,7 @@ class cqube():
         infos = self.driver.find_elements_by_xpath(Data.details)
         for i in range(len(infos)):
             print(infos[i].text)
+
     def Total_details(self):
         details = self.driver.find_elements_by_xpath(Data.SAR_Details)
         for i in range(len(details)):
@@ -185,3 +186,24 @@ class cqube():
                 mouseover(i)
                 i = i + 1
 
+    def Table_data(self):
+        tabledata = self.driver.find_elements_by_xpath(Data.distrows)
+        for i in range(len(tabledata)):
+            print(tabledata[i].text)
+        footer = self.driver.find_elements_by_xpath(Data.footer)
+        for i in range(len(footer)):
+            print(footer[i].text)
+            time.sleep(5)
+
+
+    def x_yaxis(self):
+        xaxis_lists = self.driver.find_elements_by_xpath(Data.xaxis)
+        yaxis_lists = self.driver.find_elements_by_xpath(Data.yaxis)
+        for i in range(len(xaxis_lists)):
+            xaxis_lists[i].click()
+            print(xaxis_lists[i].text)
+            time.sleep(4)
+            for j in range(len(yaxis_lists)):
+                yaxis_lists[i].click()
+                print(yaxis_lists[j].text)
+                time.sleep(4)

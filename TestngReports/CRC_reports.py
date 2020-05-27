@@ -47,8 +47,8 @@ class MyTestSuite(unittest.TestCase):
 
         ])
 
-        dir = pwd()
-        outfile = open(dir.get_report_path(), "w")
+        # dir = pwd()
+        outfile = open("/home/chetan/cQube-New/Reports/CRC_executionReport.html", "w")
 
         runner1 = HTMLTestRunner.HTMLTestRunner(
             stream=outfile,

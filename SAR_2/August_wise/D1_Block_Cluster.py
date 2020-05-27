@@ -21,7 +21,7 @@ class Schools_validation(unittest.TestCase):
         driver.navigate_to_student_report()
 
     def test_validate_schoolrecords(self):
-
+        time.sleep(5)
         self.driver.find_element_by_xpath(Data.SARD1).click()
         self.driver.find_element_by_xpath(Data.SARB3).click()
         self.driver.find_element_by_xpath(Data.SARC7).click()

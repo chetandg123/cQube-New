@@ -25,16 +25,10 @@ class bar_details(unittest.TestCase):
         blk = self.driver.find_element_by_xpath(Data.CRB8).click()
 
         self.driver.find_element_by_xpath(Data.CRC3).click()
-
-        self.driver.find_element_by_xpath(Data.Download).click()
         time.sleep(5)
-        tabledata = self.driver.find_elements_by_xpath(Data.distrows)
-        for i in range(len(tabledata)):
-            print(tabledata[i].text)
-        footer = self.driver.find_elements_by_xpath(Data.footer)
-        for i in range(len(footer)):
-            print(footer[i].text)
-            time.sleep(5)
+        driver = cqube(self.driver)
+        driver.Table_data()
+        time.sleep(5)
 
 
     def tearDown(self):

@@ -20,6 +20,7 @@ class Blockdata_validation(unittest.TestCase):
         driver.navigate_to_student_report()
 
     def test_validate_schoolrecords(self):
+        time.sleep(5)
         dist = self.driver.find_element_by_xpath(Data.SARD3).click()
         blk = self.driver.find_element_by_xpath(Data.SARB2).click()
         time.sleep(10)

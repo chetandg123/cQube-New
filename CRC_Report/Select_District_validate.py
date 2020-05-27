@@ -18,10 +18,10 @@ class District_report(unittest.TestCase):
         driver.navigate_to_crc_report()
     def test_crcclick(self):
 
-        time.sleep(30)
-        self.driver.find_element_by_xpath(Data.SRD1).click()
+        time.sleep(35)
+        self.driver.find_element_by_xpath(Data.CRD1).click()
         time.sleep(5)
-        dist = self.driver.find_element_by_xpath(Data.SRD1).text
+        dist = self.driver.find_element_by_xpath(Data.CRD1).text
         self.assertEqual(dist,Data.value1,"item  is not selected!..")
 
 

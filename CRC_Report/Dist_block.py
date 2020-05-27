@@ -18,13 +18,12 @@ class Crc_Reports(unittest.TestCase):
         driver.navigate_to_crc_report()
 
     def test_crcclick(self):
-        time.sleep(30)
+        time.sleep(35)
         self.driver.find_element_by_xpath(Data.CRD13).click()
         time.sleep(5)
         self.driver.find_element_by_xpath(Data.CRB5).click()
         time.sleep(10)
 
-        headers = self.driver.find_elements_by_xpath(Data.headers)
         headers = self.driver.find_elements_by_xpath(Data.headers)
         for i in range(len(headers)):
             print(headers[i].text)

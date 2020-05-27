@@ -16,7 +16,7 @@ class table_recordtest(unittest.TestCase):
         driver = cqube(self.driver)
         driver.open_cqube_appln()
         driver.login_cqube()
-
+        driver.navigate_to_crc_report()
     def test_crcclick(self):
         time.sleep(30)
         dist = self.driver.find_element_by_xpath(Data.CRD18).click()

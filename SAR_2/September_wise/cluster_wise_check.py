@@ -11,7 +11,7 @@ from TS.reuse_func import cqube
 from get_dir import pwd
 
 
-class Una_blocks(unittest.TestCase):
+class Blocks_Wise_test(unittest.TestCase):
     @classmethod
     def setUp(self):
         dri = pwd()
