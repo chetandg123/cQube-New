@@ -189,8 +189,8 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2020-05-27 13:37:37</p>
-<p class='attribute'><strong>Duration:</strong> 0:31:47.649711</p>
+<p class='attribute'><strong>Start Time:</strong> 2020-05-27 20:26:07</p>
+<p class='attribute'><strong>Duration:</strong> 0:23:18.608535</p>
 <p class='attribute'><strong>Status:</strong> Error 15</p>
 
 <p class='description'>System Tests</p>
@@ -248,17 +248,17 @@ function showOutput(id, name) {
 ft1.1: Traceback (most recent call last):
   File "/home/chetan/cQube-New/SAR_2/October_wise/Clusters_Button_Check.py", line 21, in setUp
     driver.navigate_to_student_report_O()
-  File "/home/chetan/cQube-New/TS/reuse_func.py", line 42, in navigate_to_student_report_O
-    self.driver.find_element_by_xpath(Data.Oct).click()
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
-    'value': value})['value']
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 40, in navigate_to_student_report_O
+    self.driver.find_element_by_xpath(Data.SAR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//select[@id='month']/option[contains(text(),' October_wise ')]"}
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
   (Session info: chrome=83.0.4103.61)
 
 
@@ -346,17 +346,17 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
 ft3.1: Traceback (most recent call last):
   File "/home/chetan/cQube-New/SAR_2/October_wise/D1_Cluster10_Dots.py", line 21, in setUp
     driver.navigate_to_student_report_O()
-  File "/home/chetan/cQube-New/TS/reuse_func.py", line 40, in navigate_to_student_report_O
-    self.driver.find_element_by_xpath(Data.SAR).click()
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 42, in navigate_to_student_report_O
+    self.driver.find_element_by_xpath(Data.Oct).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
+    'value': value})['value']
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//select[@id='month']/option[contains(text(),' October_wise ')]"}
   (Session info: chrome=83.0.4103.61)
 
 
@@ -393,17 +393,19 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
         <pre>
         
 ft4.1: Traceback (most recent call last):
-  File "/home/chetan/cQube-New/SAR_2/October_wise/D1_cluster_count.py", line 19, in setUp
-    driver.open_cqube_appln()
-  File "/home/chetan/cQube-New/TS/reuse_func.py", line 19, in open_cqube_appln
-    self.driver.get(Data.url)
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 333, in get
-    self.execute(Command.GET, {'url': url})
+  File "/home/chetan/cQube-New/SAR_2/October_wise/D1_cluster_count.py", line 21, in setUp
+    driver.navigate_to_student_report_O()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 40, in navigate_to_student_report_O
+    self.driver.find_element_by_xpath(Data.SAR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receiving message from renderer: 298.613
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
   (Session info: chrome=83.0.4103.61)
 
 
@@ -442,17 +444,17 @@ selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receivi
 ft5.1: Traceback (most recent call last):
   File "/home/chetan/cQube-New/SAR_2/October_wise/D2_Block_Dots.py", line 20, in setUp
     driver.navigate_to_student_report_O()
-  File "/home/chetan/cQube-New/TS/reuse_func.py", line 42, in navigate_to_student_report_O
-    self.driver.find_element_by_xpath(Data.Oct).click()
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
-    'value': value})['value']
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 40, in navigate_to_student_report_O
+    self.driver.find_element_by_xpath(Data.SAR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//select[@id='month']/option[contains(text(),' October_wise ')]"}
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
   (Session info: chrome=83.0.4103.61)
 
 
@@ -491,17 +493,17 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
 ft6.1: Traceback (most recent call last):
   File "/home/chetan/cQube-New/SAR_2/October_wise/D20_Block.py", line 24, in setUp
     driver.navigate_to_student_report_O()
-  File "/home/chetan/cQube-New/TS/reuse_func.py", line 42, in navigate_to_student_report_O
-    self.driver.find_element_by_xpath(Data.Oct).click()
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
-    'value': value})['value']
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 40, in navigate_to_student_report_O
+    self.driver.find_element_by_xpath(Data.SAR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//select[@id='month']/option[contains(text(),' October_wise ')]"}
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
   (Session info: chrome=83.0.4103.61)
 
 
@@ -540,17 +542,17 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
 ft7.1: Traceback (most recent call last):
   File "/home/chetan/cQube-New/SAR_2/October_wise/District_random.py", line 20, in setUp
     driver.navigate_to_student_report_O()
-  File "/home/chetan/cQube-New/TS/reuse_func.py", line 42, in navigate_to_student_report_O
-    self.driver.find_element_by_xpath(Data.Oct).click()
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
-    'value': value})['value']
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 40, in navigate_to_student_report_O
+    self.driver.find_element_by_xpath(Data.SAR).click()
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//select[@id='month']/option[contains(text(),' October_wise ')]"}
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
   (Session info: chrome=83.0.4103.61)
 
 
@@ -685,20 +687,19 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
         <pre>
         
 ft10.1: Traceback (most recent call last):
-  File "/home/chetan/cQube-New/SAR_2/October_wise/District_validation.py", line 22, in setUp
-    driver.navigate_to_student_report_O()
-  File "/home/chetan/cQube-New/TS/reuse_func.py", line 40, in navigate_to_student_report_O
-    self.driver.find_element_by_xpath(Data.SAR).click()
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/SAR_2/October_wise/District_validation.py", line 18, in setUp
+    self.driver = webdriver.Chrome(dri.get_driver_path())
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=83.0.4103.61)
+selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
 
 
 
@@ -734,19 +735,20 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
         <pre>
         
 ft11.1: Traceback (most recent call last):
-  File "/home/chetan/cQube-New/SAR_2/October_wise/Dots_schoolwise.py", line 22, in setUp
-    driver.navigate_to_student_report_O()
-  File "/home/chetan/cQube-New/TS/reuse_func.py", line 40, in navigate_to_student_report_O
-    self.driver.find_element_by_xpath(Data.SAR).click()
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/SAR_2/October_wise/Dots_schoolwise.py", line 21, in setUp
+    driver.login_cqube()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 22, in login_cqube
+    self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
+    'value': value})['value']
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=83.0.4103.61)
 
 
@@ -782,18 +784,23 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
         </div>
         <pre>
         
-ft12.1: Traceback (most recent call last):
-  File "/home/chetan/cQube-New/SAR_2/October_wise/Home_map.py", line 23, in test_select
-    self.driver.find_element_by_xpath(Data.Home_icon).click()
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
+ft12.1: /home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py:276: ResourceWarning: unclosed &lt;socket.socket fd=22, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 50292), raddr=('127.0.0.1', 52017)&gt;
+  return list(self._wrap_value(item) for item in value)
+Traceback (most recent call last):
+  File "/home/chetan/cQube-New/SAR_2/October_wise/Home_map.py", line 19, in setUp
+    driver.login_cqube()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 22, in login_cqube
+    self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
+    'value': value})['value']
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=83.0.4103.61)
 
 
@@ -830,19 +837,20 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
         <pre>
         
 ft13.1: Traceback (most recent call last):
-  File "/home/chetan/cQube-New/SAR_2/October_wise/SAR_click.py", line 19, in setUp
-    driver.navigate_to_student_report_O()
-  File "/home/chetan/cQube-New/TS/reuse_func.py", line 40, in navigate_to_student_report_O
-    self.driver.find_element_by_xpath(Data.SAR).click()
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/SAR_2/October_wise/SAR_click.py", line 18, in setUp
+    driver.login_cqube()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 22, in login_cqube
+    self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
+    'value': value})['value']
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=83.0.4103.61)
 
 
@@ -879,19 +887,20 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
         <pre>
         
 ft14.1: Traceback (most recent call last):
-  File "/home/chetan/cQube-New/SAR_2/October_wise/Schools_check.py", line 21, in setUp
-    driver.navigate_to_student_report_O()
-  File "/home/chetan/cQube-New/TS/reuse_func.py", line 40, in navigate_to_student_report_O
-    self.driver.find_element_by_xpath(Data.SAR).click()
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
+  File "/home/chetan/cQube-New/SAR_2/October_wise/Schools_check.py", line 20, in setUp
+    driver.login_cqube()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 22, in login_cqube
+    self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
+    'value': value})['value']
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=83.0.4103.61)
 
 
@@ -928,10 +937,10 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
         <pre>
         
 ft15.1: Traceback (most recent call last):
-  File "/home/chetan/cQube-New/SAR_2/October_wise/validation_distblockcuster.py", line 20, in setUp
-    driver.navigate_to_student_report_O()
-  File "/home/chetan/cQube-New/TS/reuse_func.py", line 42, in navigate_to_student_report_O
-    self.driver.find_element_by_xpath(Data.Oct).click()
+  File "/home/chetan/cQube-New/SAR_2/October_wise/validation_distblockcuster.py", line 19, in setUp
+    driver.login_cqube()
+  File "/home/chetan/cQube-New/TS/reuse_func.py", line 22, in login_cqube
+    self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
     return self.find_element(by=By.XPATH, value=xpath)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
@@ -940,7 +949,8 @@ ft15.1: Traceback (most recent call last):
     self.error_handler.check_response(response)
   File "/home/chetan/cQube-New/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//select[@id='month']/option[contains(text(),' October_wise ')]"}
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=83.0.4103.61)
 
 

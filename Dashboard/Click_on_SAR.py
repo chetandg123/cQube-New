@@ -19,7 +19,8 @@ class Click_on_SAR(unittest.TestCase):
     def test_menu(self):
         driver = cqube(self.driver)
         driver.navigate_to_student_report()
-        self.driver.find_element_by_xpath(Data.log_)
+        time.sleep(5)
+        self.driver.find_element_by_xpath(Data.logout).click()
 
     def tearDown(self):
         time.sleep(5)

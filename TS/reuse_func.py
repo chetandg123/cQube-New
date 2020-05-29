@@ -207,3 +207,5 @@ class cqube():
                 yaxis_lists[i].click()
                 print(yaxis_lists[j].text)
                 time.sleep(4)
+
+
